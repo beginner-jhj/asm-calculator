@@ -209,14 +209,14 @@ int_to_ascii:
     jnz .convert_loop
 
     cmp edi, 1
-    jne .finish_converstion ; If not negative, skip adding '-'
+    jne .finish_conversion ; If not negative, skip adding '-'
     mov byte [esi], '-'    ; Add negative sign
     dec esi                ; Move ESI back to the start of the string
 
 
 
 
-.finish_converstion:
+.finish_conversion:
     inc esi              ; Move ESI to the start of the string
 
     mov edi, result
@@ -224,3 +224,4 @@ int_to_ascii:
     sub edi, esi         ; Calculate length of the string
 
     ret
+
